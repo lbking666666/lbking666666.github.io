@@ -1558,7 +1558,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #aff;
+  background: #9ef;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2311,9 +2311,8 @@ body {
 }
 .site-meta {
   padding-top: 40px;
-  background: url("../logo.png") no-repeat center center;
+  background: $black-deepurl('../logo.png') no-repeat center center;
   color: #fff;
-  background: #222;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-meta {
