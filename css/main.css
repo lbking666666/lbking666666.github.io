@@ -1558,7 +1558,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffd6da;
+  background: #ff2eff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2310,7 +2310,8 @@ body {
   float: right;
 }
 .site-meta {
-  padding: 20px 0;
+  padding-top: 40px;
+  background: url("../logo.png") center center;
   color: #fff;
   background: #222;
 }
