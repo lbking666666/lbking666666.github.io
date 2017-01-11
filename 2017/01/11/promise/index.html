@@ -1,0 +1,712 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascrpit," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="概念ES6 原生提供了 Promise 对象。所谓Promise，就是一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的 API，可供进一步处理.
+Promise 对象有以下两个特点。
+（1）对象的状态不受外界影响。Promise 对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfil">
+<meta property="og:type" content="article">
+<meta property="og:title" content="promise">
+<meta property="og:url" content="https://lbking666666.github.io/2017/01/11/promise/index.html">
+<meta property="og:site_name" content="逍遥阁">
+<meta property="og:description" content="概念ES6 原生提供了 Promise 对象。所谓Promise，就是一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的 API，可供进一步处理.
+Promise 对象有以下两个特点。
+（1）对象的状态不受外界影响。Promise 对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfil">
+<meta property="og:updated_time" content="2017-01-11T06:00:58.425Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="promise">
+<meta name="twitter:description" content="概念ES6 原生提供了 Promise 对象。所谓Promise，就是一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的 API，可供进一步处理.
+Promise 对象有以下两个特点。
+（1）对象的状态不受外界影响。Promise 对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfil">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://lbking666666.github.io/2017/01/11/promise/"/>
+
+
+  <title> promise | 逍遥阁 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?4a5fe449a69fe58ea400a6e9ac4a7f4c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">逍遥阁</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">关注前端开发</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                promise
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-11T13:09:24+08:00" content="2017-01-11">
+              2017-01-11
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/11/promise/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/11/promise/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>ES6 原生提供了 Promise 对象。<br>所谓Promise，就是一个对象，用来传递异步操作的消息。它代表了某个未来才会知道结果的事件（通常是一个异步操作），并且这个事件提供统一的 API，可供进一步处理.</p>
+<p>Promise 对象有以下两个特点。</p>
+<p>（1）对象的状态不受外界影响。Promise 对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfilled）和 Rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是 Promise 这个名字的由来，它的英语意思就是「承诺」，表示其他手段无法改变。</p>
+<p>（2）一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise 对象的状态改变，只有两种可能：从 Pending 变为 Resolved 和从 Pending 变为 Rejected。只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果。就算改变已经发生了，你再对 Promise 对象添加回调函数，也会立即得到这个结果。这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。</p>
+<p>有了 Promise 对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，Promise 对象提供统一的接口，使得控制异步操作更加容易。</p>
+<p>Promise 也有一些缺点。首先，无法取消 Promise，一旦新建它就会立即执行，无法中途取消。其次，如果不设置回调函数，Promise 内部抛出的错误，不会反应到外部。第三，当处于 Pending 状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。</p>
+<p>Promise 构造函数接受一个函数作为参数，该函数的两个参数分别是 resolve 方法和 reject 方法。</p>
+<p>如果异步操作成功，则用 resolve 方法将 Promise 对象的状态，从「未完成」变为「成功」（即从 pending 变为 resolved）；</p>
+<p>如果异步操作失败，则用 reject 方法将 Promise 对象的状态，从「未完成」变为「失败」（即从 pending 变为 rejected）。</p>
+<h1 id="基本的-api"><a href="#基本的-api" class="headerlink" title="基本的 api"></a>基本的 api</h1><p>Promise.resolve()<br>Promise.reject()<br>Promise.prototype.then()<br>Promise.prototype.catch()<br>Promise.all() // 所有的完成<br>Promise.race() // 竞速，完成一个即可</p>
+<h1 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// promise</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">runAsync</span></span>()&#123;</div><div class="line">    var p = new Promise(<span class="keyword">function</span>(resolve, reject)&#123;</div><div class="line">        //做一些异步操作</div><div class="line">        <span class="built_in">set</span>Timeout(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">            console.log(<span class="string">'执行完成'</span>);</div><div class="line">            resolve(<span class="string">'随便什么数据'</span>);</div><div class="line">        &#125;, 2000);</div><div class="line">    &#125;);</div><div class="line">    <span class="built_in">return</span> p;            </div><div class="line">&#125;</div><div class="line"></div><div class="line">runAsync().then(<span class="keyword">function</span>(data)&#123;</div><div class="line">    console.log(data);</div><div class="line">    //后面可以用传过来的数据做些其他操作</div><div class="line">    //......</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//回调函数封装</div><div class="line"><span class="keyword">function</span> runAsync(callback)&#123;</div><div class="line">    <span class="built_in">set</span>Timeout(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        console.log(<span class="string">'执行完成'</span>);</div><div class="line">        callback(<span class="string">'随便什么数据'</span>);</div><div class="line">    &#125;, 2000);</div><div class="line">&#125;</div><div class="line"></div><div class="line">runAsync(<span class="keyword">function</span>(data)&#123;</div><div class="line">    console.log(data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>效果是一样的，而Promise的优势在于，可以在then方法中继续写Promise对象并返回，然后继续调用then来进行回调操作。</p>
+<h1 id="链式操作的用法"><a href="#链式操作的用法" class="headerlink" title="链式操作的用法"></a>链式操作的用法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">runAsync1()</div><div class="line">.then(<span class="keyword">function</span>(data)&#123;</div><div class="line">    console.log(data);</div><div class="line">    <span class="built_in">return</span> runAsync2();</div><div class="line">&#125;)</div><div class="line">.then(<span class="keyword">function</span>(data)&#123;</div><div class="line">    console.log(data);</div><div class="line">    <span class="built_in">return</span> runAsync3();</div><div class="line">&#125;)</div><div class="line">.then(<span class="keyword">function</span>(data)&#123;</div><div class="line">    console.log(data);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">runAsync1</span></span>()&#123;</div><div class="line">    var p = new Promise(<span class="keyword">function</span>(resolve, reject)&#123;</div><div class="line">        //做一些异步操作</div><div class="line">        <span class="built_in">set</span>Timeout(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">            console.log(<span class="string">'异步任务1执行完成'</span>);</div><div class="line">            resolve(<span class="string">'随便什么数据1'</span>);</div><div class="line">        &#125;, 1000);</div><div class="line">    &#125;);</div><div class="line">    <span class="built_in">return</span> p;            </div><div class="line">&#125;</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">runAsync2</span></span>()&#123;</div><div class="line">    var p = new Promise(<span class="keyword">function</span>(resolve, reject)&#123;</div><div class="line">        //做一些异步操作</div><div class="line">        <span class="built_in">set</span>Timeout(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">            console.log(<span class="string">'异步任务2执行完成'</span>);</div><div class="line">            resolve(<span class="string">'随便什么数据2'</span>);</div><div class="line">        &#125;, 2000);</div><div class="line">    &#125;);</div><div class="line">    <span class="built_in">return</span> p;            </div><div class="line">&#125;</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">runAsync3</span></span>()&#123;</div><div class="line">    var p = new Promise(<span class="keyword">function</span>(resolve, reject)&#123;</div><div class="line">        //做一些异步操作</div><div class="line">        <span class="built_in">set</span>Timeout(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">            console.log(<span class="string">'异步任务3执行完成'</span>);</div><div class="line">            resolve(<span class="string">'随便什么数据3'</span>);</div><div class="line">        &#125;, 2000);</div><div class="line">    &#125;);</div><div class="line">    <span class="built_in">return</span> p;            </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="reject的用法"><a href="#reject的用法" class="headerlink" title="reject的用法"></a>reject的用法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getNumber</span></span>()&#123;</div><div class="line">    var p = new Promise(<span class="keyword">function</span>(resolve, reject)&#123;</div><div class="line">        //做一些异步操作</div><div class="line">        <span class="built_in">set</span>Timeout(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">            var num = Math.ceil(Math.random()*10); //生成1-10的随机数</div><div class="line">            <span class="keyword">if</span>(num&lt;=5)&#123;</div><div class="line">                resolve(num);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span>&#123;</div><div class="line">                reject(<span class="string">'数字太大了'</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;, 2000);</div><div class="line">    &#125;);</div><div class="line">    <span class="built_in">return</span> p;            </div><div class="line">&#125;</div><div class="line"></div><div class="line">getNumber()</div><div class="line">.then(</div><div class="line">    <span class="keyword">function</span>(data)&#123;</div><div class="line">        console.log(<span class="string">'resolved'</span>);</div><div class="line">        console.log(data);</div><div class="line">    &#125;, </div><div class="line">    <span class="keyword">function</span>(reason, data)&#123;</div><div class="line">        console.log(<span class="string">'rejected'</span>);</div><div class="line">        console.log(reason);</div><div class="line">    &#125;</div><div class="line">);</div></pre></td></tr></table></figure>
+<p>reject的作用就是把Promise的状态置为rejected，这样我们在then中就能捕捉到，然后执行“失败”情况的回调。</p>
+<h1 id="catch的用法"><a href="#catch的用法" class="headerlink" title="catch的用法"></a>catch的用法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getNumber</span></span>()&#123;</div><div class="line">    var p = new Promise(<span class="keyword">function</span>(resolve, reject)&#123;</div><div class="line">        //做一些异步操作</div><div class="line">        <span class="built_in">set</span>Timeout(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">            var num = Math.ceil(Math.random()*10); //生成1-10的随机数</div><div class="line">            <span class="keyword">if</span>(num&lt;=5)&#123;</div><div class="line">                resolve(num);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span>&#123;</div><div class="line">                reject(<span class="string">'数字太大了'</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;, 2000);</div><div class="line">    &#125;);</div><div class="line">    <span class="built_in">return</span> p;            </div><div class="line">&#125;</div><div class="line">getNumber()</div><div class="line">.then(<span class="keyword">function</span>(data)&#123;</div><div class="line">    console.log(<span class="string">'resolved'</span>);</div><div class="line">    console.log(data);</div><div class="line">&#125;)</div><div class="line">.catch(<span class="keyword">function</span>(reason)&#123;</div><div class="line">    console.log(<span class="string">'rejected'</span>);</div><div class="line">    console.log(reason);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>其实它和then的第二个参数一样，用来指定reject的回调,另外一个作用：在执行resolve的回调（也就是上面then中的第一个参数）时，如果抛出异常了（代码出错了），那么并不会报错卡死js，而是会进到这个catch方法中;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">getNumber()</div><div class="line">.then(<span class="keyword">function</span>(data)&#123;</div><div class="line">    console.log(<span class="string">'resolved'</span>);</div><div class="line">    console.log(data);</div><div class="line">    console.log(somedata); //此处的somedata未定义</div><div class="line">&#125;)</div><div class="line">.catch(<span class="keyword">function</span>(reason)&#123;</div><div class="line">    console.log(<span class="string">'rejected'</span>);</div><div class="line">    console.log(reason);</div><div class="line">&#125;);</div><div class="line">``` </div><div class="line">即便是有错误的代码也不会报错了，这与我们的try/catch语句有相同的功能。</div><div class="line"></div><div class="line"><span class="comment"># all的用法</span></div><div class="line">Promise的all方法提供了并行执行异步操作的能力，并且在所有异步操作执行完后才执行回调。</div><div class="line"></div><div class="line">``` bash </div><div class="line">Promise</div><div class="line">.all([runAsync1(), runAsync2(), runAsync3()])</div><div class="line">.then(<span class="keyword">function</span>(results)&#123;</div><div class="line">    console.log(results);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>用Promise.all来执行，all接收一个数组参数，里面的值最终都算返回Promise对象。这样，三个异步操作的并行执行的，等到它们都执行完后才会进到then里面。那么，三个异步操作返回的数据哪里去了呢？都在then里面呢，all会把所有异步操作的结果放进一个数组中传给then，就是上面的results。</p>
+<h1 id="race的用法"><a href="#race的用法" class="headerlink" title="race的用法"></a>race的用法</h1><p>all方法的效果实际上是「谁跑的慢，以谁为准执行回调」，那么相对的就有另一个方法「谁跑的快，以谁为准执行回调」，这就是race方法，这个词本来就是赛跑的意思。race的用法与all一样</p>
+<pre><code class="bash">
+//请求某个图片资源
+<span class="keyword">function</span> <span class="function"><span class="title">requestImg</span></span>(){
+    var p = new Promise(<span class="keyword">function</span>(resolve, reject){
+        var img = new Image();
+        img.onload = <span class="function"><span class="title">function</span></span>(){
+            resolve(img);
+        }
+        img.src = <span class="string">'xxxxxx'</span>;
+    });
+    <span class="built_in">return</span> p;
+}
+
+//延时函数，用于给请求计时
+<span class="keyword">function</span> <span class="function"><span class="title">timeout</span></span>(){
+    var p = new Promise(<span class="keyword">function</span>(resolve, reject){
+        <span class="built_in">set</span>Timeout(<span class="function"><span class="title">function</span></span>(){
+            reject(<span class="string">'图片请求超时'</span>);
+        }, 5000);
+    });
+    <span class="built_in">return</span> p;
+}
+
+Promise
+.race([requestImg(), timeout()])
+.then(<span class="keyword">function</span>(results){
+    console.log(results);
+})
+.catch(<span class="keyword">function</span>(reason){
+    console.log(reason);
+});
+</code></pre>
+<p>requestImg函数会异步请求一张图片，我把地址写为”xxxxxx”，所以肯定是无法成功请求到的。timeout函数是一个延时5秒的异步操作。我们把这两个返回Promise对象的函数放进race，于是他俩就会赛跑，如果5秒之内图片请求成功了，那么遍进入then方法，执行正常的流程。如果5秒钟图片还未成功返回，那么timeout就跑赢了，则进入catch，报出“图片请求超时”的信息。</p>
+<p>参考资料 <a href="http://www.cnblogs.com/lvdabao/p/es6-promise-1.html" target="_blank" rel="external">大白话讲解Promise（一）</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascrpit/" rel="tag">#javascrpit</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/11/node-js模块require和exports/" rel="next" title="node.js模块require和exports">
+                <i class="fa fa-chevron-left"></i> node.js模块require和exports
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/11/promise/"
+           data-title="promise" data-url="https://lbking666666.github.io/2017/01/11/promise/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="吕彬" />
+          <p class="site-author-name" itemprop="name">吕彬</p>
+          <p class="site-description motion-element" itemprop="description">生活就是没事找点乐子，自己哄着自己开心!</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lbking666666" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/lbking66666" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/# 286504720" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/# lbking666666" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本的-api"><span class="nav-number">2.</span> <span class="nav-text">基本的 api</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比较"><span class="nav-number">3.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链式操作的用法"><span class="nav-number">4.</span> <span class="nav-text">链式操作的用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reject的用法"><span class="nav-number">5.</span> <span class="nav-text">reject的用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#catch的用法"><span class="nav-number">6.</span> <span class="nav-text">catch的用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#race的用法"><span class="nav-number">7.</span> <span class="nav-text">race的用法</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吕彬</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lbking666666"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
