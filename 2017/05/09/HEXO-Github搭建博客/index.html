@@ -118,7 +118,7 @@ GitHub
 本地启动1hexo server
 或
 1hexo">
-<meta property="og:updated_time" content="2017-05-09T08:38:05.999Z">
+<meta property="og:updated_time" content="2017-05-09T08:41:38.442Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEXO+Github搭建博客">
 <meta name="twitter:description" content="配置环境
@@ -376,7 +376,9 @@ GitHub
 <p>到了这一步，就可以添加SSH key到你的Github账户了。键入以下指令，拷贝Key（先拷贝了，等一下可以直接粘贴）：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">clip &lt; ~/.ssh/id_rsa.pub</div></pre></td></tr></table></figure>
 <p>然后到Github里面点击SSH keys，直接粘贴key</p>
-<h2 id="博客的部署"><a href="#博客的部署" class="headerlink" title="博客的部署"></a>博客的部署</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+<h2 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:lbking666666/lbking666666.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<h2 id="博客的部署"><a href="#博客的部署" class="headerlink" title="博客的部署"></a>博客的部署</h2><p>输入命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
 <p>或</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo cl</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
 
@@ -559,7 +561,7 @@ GitHub
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置环境"><span class="nav-number">1.</span> <span class="nav-text">配置环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装HEXO"><span class="nav-number">2.</span> <span class="nav-text">安装HEXO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.1.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化hexo"><span class="nav-number">2.2.</span> <span class="nav-text">初始化hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发表一篇文章"><span class="nav-number">2.3.</span> <span class="nav-text">发表一篇文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成静态页面"><span class="nav-number">2.4.</span> <span class="nav-text">生成静态页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地启动"><span class="nav-number">2.5.</span> <span class="nav-text">本地启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置SSH-key"><span class="nav-number">3.</span> <span class="nav-text">设置SSH key</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客的部署"><span class="nav-number">3.1.</span> <span class="nav-text">博客的部署</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置环境"><span class="nav-number">1.</span> <span class="nav-text">配置环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装HEXO"><span class="nav-number">2.</span> <span class="nav-text">安装HEXO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.1.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化hexo"><span class="nav-number">2.2.</span> <span class="nav-text">初始化hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发表一篇文章"><span class="nav-number">2.3.</span> <span class="nav-text">发表一篇文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成静态页面"><span class="nav-number">2.4.</span> <span class="nav-text">生成静态页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地启动"><span class="nav-number">2.5.</span> <span class="nav-text">本地启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置SSH-key"><span class="nav-number">3.</span> <span class="nav-text">设置SSH key</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-config-yml"><span class="nav-number">3.1.</span> <span class="nav-text">配置_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#博客的部署"><span class="nav-number">3.2.</span> <span class="nav-text">博客的部署</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
