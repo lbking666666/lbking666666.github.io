@@ -2,9 +2,413 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>page</title>
+    <link rel="stylesheet" type="text/css" href="../lbforms/css/uploadify.css"><!--上传需引入-->
+	<link rel="stylesheet" href="../lbforms/css/lbform.css">
+	<link type="text/css" href="../lbtables/css/lb.tables.css" rel="stylesheet" />
+	<style type="text/css">
+		*{ margin: 0; padding: 0}
+		.form{ min-width: 850px; }
+		ul,li{ list-style: none;}
+		ul{
+			margin: 10px;
+			clear: both;
+		}
+		li{
+			margin: 10px 0;
+		}
+		/* 清理浮动 */
+		.fn-clear:after {
+			visibility: hidden;
+			display: block;
+			font-size: 0;
+			content: " ";
+			clear: both;
+			height: 0;
+		}
+		.fn-clear {
+			zoom: 1; /* for IE6 IE7 */
+		}
+		.fn-left{
+			float: left;
+			width: 50%;
+			margin: 5px 0;
+			*width: 49%;
+			display: inline;
+			*position: relative;
+			*z-index: 1;
+		}
+		label{ 
+			float: left;
+		    width: 120px; 
+		    height: 30px; 
+		    line-height: 30px; 
+		    text-align: right; 
+		    padding-right: 5px;  
+		    margin: 0 5px;
+		}
+		label em{
+			color: #f00;
+			margin-right:4px; 
+		}
+		.button{
+			height: 30px;
+			border:1px solid #ddd;
+			width:120px;
+			float: right;
+			margin: 0 4px;
+		}
+		#demo1,.demo2{ 
+			margin: 10px; 
+		}
+		.bq{ 
+			border-radius:3px; 
+			padding: 0 2px; 
+			font-size: 12px;  
+			background: #ab84d3; 
+			color: #fff;
+		}
+	</style>
 </head>
 <body>
-    <a href="bootstrap/html/index.html">bootstrap</a>
+    <div class="form">
+		<ul class="fn-clear">
+			<li class="fn-left">
+				<label><em>*</em>名称</label>
+				<input type="text" class="lb-input" lb-msg-tip ="true" lb-msg-gule="{'gule':'/^[\u4E00-\u9FA5]+$/','tip':'请输入文字'}" lb-msg = "请填写名称" lb-msg-num="0,10"  placeholder="填写名称">
+			</li>
+			<li class="fn-left">
+				<label>选项</label>
+				<select class="lb-input" lb-msg-tip ="true"  lb-msg = "请选择">
+					<option value="0">全部</option>
+					<option value="1">选项1</option>
+					<option value="2">选项2</option>
+				</select>
+			</li>
+			<li class="fn-left">
+				<label><em>*</em>日期</label>
+				<input type="text" class="Wdate lb-input"  readonly="true" onclick="WdatePicker({onpicking:function(){$(this).parents('.lb-form').removeClass('error');$(this).next('.lb-msg').hide();}})" placeholder="点击选择日期" lb-msg = "请选择日期">
+			</li>
+			<li class="fn-left">
+				<label>数量</label>
+				<button class="button">取消</button>
+				<button class="button">确定</button>
+				<input type="text" class="lb-input" lb-msg-tip ="true" b-msg-gule="{'gule':'/^[0-9]*$/','tip':'请输入数字'}"  lb-msg = "请输入数量" placeholder="数量">
+			</li>
+			<li class="fn-left">
+				<label>图片</label>
+				<input type="file" lb-upload-set="{'btn':'选择图片','type':'img','number':'1','limit':'1000KB'}" class="lb-input" id="upload" placeholder="上传一张图片,不超过1000KB">
+			</li>
+			<li class="fn-left">
+				<label>可输入选项</label>
+				<input type="text" class="lb-input" lb-msg = "请选择或输入"  value="" lb-select="{'id':'0','value':'全部'};{'id':'1','value':'选项1'};{'id':'2','value':'选项2'}">
+			</li>
+		</ul>
+		<ul class="fn-clear">
+			<li class="fn-clear">
+				<label><em>*</em>姓名</label>
+				<input type="text" class="lb-input" lb-msg-tip ="true"  lb-msg = "请输入姓名" lb-msg-gule="{'gule':' /^[\u4E00-\u9FA5]+$/','tip':'请输入文字'}">
+			</li>
+			<li class="fn-clear">
+				<label><em>*</em>日期</label>
+				<input type="text" class="Wdate lb-input"  readonly="true" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',onpicking:function(){$(this).parents('.lb-form').removeClass('error');$(this).next('.lb-msg').hide();}})" placeholder="点击选择日期" lb-msg = "请选择日期">
+			</li>
+			<li class="fn-clear">
+				<label>邮箱</label>
+				<button class="button">确定</button>
+				<input type="text" class="lb-input" lb-msg-gule="{'gule':'/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/','tip':'邮箱格式错误'}"  lb-msg-tip ="true" lb-msg = "请输入邮箱">
+			</li>
+			<li class="fn-clear">
+				<label>电话</label>
+				<input type="text" class="lb-input" lb-msg-gule="{'gule':'/^0?1[3|4|5|8][0-9]\d{8}$/','tip':'请输正确手机号'}" lb-msg-tip ="true" lb-msg = "请输入手机号">
+			</li>
+			<li class="fn-clear">
+				<label>上传文件</label>
+				<input type="file" lb-upload-set="true" class="lb-input" id="upload3" placeholder="上传文件,不超过1000KB">
+			</li>
+			<li class="fn-clear">
+				<label>上传文件</label>
+				<input type="file" class="lb-input" id="upload2"  lb-upload-set="{'btn':'选择文件','type':'file','number':'3','limit':'1000KB'}" lb-msg = "请上传文件"  placeholder="上传最多3个文件">
+			</li>
+			<li class="fn-clear">
+				<label>地址</label>
+				<input type="text" class="lb-input" lb-msg = "请选择或输入地址"  value="" lb-select="{'id':'0','value':'全部'};{'id':'1','value':'选项1'};{'id':'2','value':'选项2'}">
+			</li>
+		</ul>
+		<button class="save">保存</button>
+	</div>
+	<div id="demo1" class="lb-tables-warp"></div><!-- 绑定表格的div -->
+	<div class="demo2">
+	</div><!-- 绑定表格的div -->
+	<div class="demo3">
+		<table cellpadding="0" cellspacing="0" width="60%" class="lb-table">
+			<thead>
+				<tr>
+					<th width="200"><input type="checkbox"></th>
+					<th class="sort" data-span="true" width="60"><span class="red">序号</span></th>
+					<th class="lb-sort string" width="50%">物品编号</th>
+					<th width="36%"><select><option>计量单位</option></select></th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+
+	<script src="../lbforms/js/jquery.js"></script><!-- jquery  -->
+	<script src="../lbforms/js/jquery.uploadify.min.js"></script><!-- 上传图片需引入 -->
+	<script src="../lbforms/js/lb.form.js"></script><!-- 表格插件 -->
+	<script src="../lbforms/js/My97DatePicker/WdatePicker.js"></script><!-- 日期需引入 -->
+	<script src="../lbtables/js/lb.tables.js"></script>
+	<script src="../lbtables/js/lb.tables.event.js"></script>
+	<script src="../lbtables/js/perfect-scrollbar.with-mousewheel.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			$('.lb-input').lbform({});/*使用lbforms插件*/
+		    $('.save').bind('click',function(){//点击保存按钮时，调用tip函数做验证判断
+		        $('.lb-input').each(function(){
+		        $(this).lbform.tip($(this));
+		      });
+		    });
+
+			var col = [
+				{
+					"title":"全选",//列标题
+					"width":"120",//每列的宽度
+					"align":"center",//对齐方式 left center right
+					"rowspan":true,//这列是否存在合并
+					"format":function(val,item){//供用户自定义操作，此列返回为checkbox
+						return '<input type="checkbox">'
+					}
+				},{
+					"title":"物品编号",//列标题
+					"width":"120",//每列的宽度
+					"align":"left",//对齐方式
+					"rowspan":true, //这列是否存在合并列
+					"format":function(val,item){//供用户自定义操作，此列返回为带有span的值
+						return '<span>'+val+'</span>'
+					}
+				},{
+					"title":"物料名称",//列标题
+					"width":"500",//每列的宽度
+					"align":"center",//对齐方式
+					"class":"red",//此列上添加的样式，此列为红色
+					"format":function(val,item){//供用户自定义操作，
+						if(val == ''){//此列返回为如果值为空则返回一个type为text的input
+							return '<input type="text" class="table-text" value="'+val+'" placeholder="请输入"/>';
+						}else{//否则返回值且后面带有一个自定义的span标签
+							return val+' <span class="bq">终止</span>';
+						}
+					}
+				},{
+					"title":"规格型号",//列标题
+					"width":"200",//每列的宽度
+					"align":"left",//对齐方式
+					"rowspan":true//这列是否存在合并列
+				},{
+					"title":"品质描述",//列标题
+					"width":"200",//每列的宽度
+					"align":"left"//对齐方式
+				},{
+					"title":"质量标准",//列标题
+					"width":"200",//每列的宽度
+					"align":"left",//对齐方式
+					"rowspan":true//这列是否存在合并列
+				},{
+					"title":"包装规格",//列标题
+					"width":"200",//每列的宽度
+					"align":"left",//对齐方式
+					"class":"lb-sort string"//设置排序和字符串string类型
+				},{
+					"title":"含税单价",//列标题
+					"width":"200",//每列的宽度
+					"class":"lb-sort number",//设置排序和数字number类型
+					"align":"right"//对齐方式
+				},{
+					"title":"订单数量",//列标题
+					"width":"200",//每列的宽度
+					"align":"right"//对齐方式
+				},{
+					"title":"含税金额",//列标题
+					"width":"200",//每列的宽度
+					"align":"right",//对齐方式
+					"class":"red lb-sort number"//设置排序和字符串string类型
+				},{
+					"title":"日期",//列标题
+					"width":"200",//每列的宽度
+					"align":"right",//对齐方式
+					"class":"lb-sort date"//设置排序和日期date类型
+				}
+			];
+			var col2 = [
+				{
+					"title":"物品编号",//列标题 如果已有表格存在不需要此项
+					"width":"50%",//每列的宽度不包含操作列和序号列  如果已有表格存在不需要此项
+					"align":"left",//对齐方式 left center right
+					"class":"lb-sort string"//设置排序和日期date类型
+				},{
+					"title":"计量单位",
+					"width":"36%",
+					"align":"right"
+				}
+			];
+			var arr = [2,4,5,6];//设置隐藏列
+			$('#demo1').lbTables({//给外容器绑定控件
+			  "id":'lbTables',//table下的tbody添加id 默认情况下不用设置 如果已有表格存在不需要此项
+			  "data":'../lbtables/js/data.json',//ajax地址url
+			  "get":{"name":"lb"},//get传递参数
+			  "width":"1500",//表格整体宽度
+			  "class":'lb-table',//table添加样式 默认情况下不用设置 如果已有表格存在不需要此项
+			  "th":col,//表格每列属性设置
+			  "sort":'1',//序号列放入到第n列这里填写n
+			  "editor":{//单独控制操作列 
+			    "value":true, //是否显示操作列 如果为false 则其他参数可不用设置
+			    "name":"操作",//列标题
+			    "width":'200',//列宽度
+			    "option":"last",//在列首还是列尾 参数值 first last
+			    "align":'center',//列对齐方式
+			    "btn":[{
+			      "class":"blue1 lb-deltr",//样式 删除的按钮标示class为 lb-deltr
+			      "name":"删除"
+			    }],
+			    "rowspan":false//控制操作列是否合并
+			  },
+			  "pop":{
+				  "bool":true,//input点击或输入弹出层
+				  "title":["序号","物品编号","物品名称","规格型号","匹配平台类别"],//弹出的表头
+				  "class":"lb-table",//弹出的table的样式
+				  "height":"100",//高度
+				  "widthAll":"500",//宽度
+				  "width":["50","40"],//单元格的宽度
+				  "popurl":"js/table.json",//输入弹出的ajax url
+				  "col":"table-text"//关联的input找到带有table-text的input
+			  },
+			  beforeLoad:function(){
+			  	var optin = [];
+			  	optin.push('<div class="options">',
+			  		'<button id="reloadBtn">reolad</button>',
+			  		'<button id="save">save</button>',
+			  		'<button id="setHide">setHide</button>',
+			  		'</div>');
+			  	$('#demo1').before(optin.join(''));
+			  },
+			  afterLoad:function(){//表格加载完毕之后的操作接口
+			  	//隐藏列设置
+			  	$('#setHide').bind('click',function(){
+			  		$(this).addClass('seted');
+					$.each(arr,function(i,k){
+						$('#demo1 .lb-table:first').find('tr').each(function(){
+							$(this).find('th').eq(k).addClass('col-hide');
+							$(this).find('td').eq(k).addClass('col-hide');
+						});
+					});
+			  	});
+            	$('#demo1').perfectScrollbar();//设置滚动条
+			  }
+			});
+
+			$('#reloadBtn').bind('click',function(){//页面添加导入按钮
+		      $('#demo1').lbTables({//对已经加载过数据的表格进行追加
+		        //"id":'lbTables',//table下的tbody添加id 默认情况下不用设置 如果已有表格存在不需要此项
+		        "data":'../lbtables/js/data3.json',//导入的ajax地址url
+		        "get":{"name":"lb"},//get传递参数
+		        //"class":'lb-table',//table添加样式 默认情况下不用设置 如果已有表格存在不需要此项
+		        "th":col,//表格每列属性设置
+		        "sort":'1',//序号列放入到第n列这里填写n
+		        "editor":{//控制操作列 
+		          "value":true, //是否显示操作列 如果为false 则其他参数可不用设置
+		          "name":"操作",//列标题
+		          "width":'200',//列宽度
+		          "option":"last",//在列首还是列尾 参数值 first last
+		          "align":'center',//列对齐方式 left center right
+		          "btn":[{
+		            "class":"blue1 lb-deltr",//样式 删除的按钮标示class为 lb-deltr
+		            "name":"删除"
+		          }],
+		          "rowspan":false//控制操作列是否合并
+		        },
+		        afterLoad:function(){//表格加载完毕之后的操作接口
+				  	//初始时设置了隐藏列
+				  	if($('#setHide').hasClass('seted')){
+					  	$.each(arr,function(i,k){
+							$('#demo1 .lb-table:first').find('tr').each(function(){
+								$(this).find('th').eq(k).addClass('col-hide');
+								$(this).find('td').eq(k).addClass('col-hide');
+							});
+						});
+				  	}
+				}
+		      });
+		    });
+			$('.demo2').lbTables({
+				"id":'lbTables2',//table下的tbody添加id 默认情况下不用设置 如果已有表格存在不需要此项
+				"data":'../lbtables/js/data2.json',//json地址url
+				"get":{"name":"lb"},//get传递参数
+				"width":"60%",
+				"class":'lb-table',//table添加样式 默认情况下不用设置 如果已有表格存在不需要此项
+				"th":col2,
+				"sort":'1', 
+				"editor":{//控制操作列 
+		          "value":true, //是否显示操作列 如果为false 则其他参数可不用设置
+		          "name":"操作",//列标题
+		          "width":'200',//列宽度
+		          "option":"first",//在列首还是列尾 参数值 first last
+		          "align":'center',//列对齐方式 left center right
+		          "btn":[{//操作列的链接名称及样式
+		            "class":"blue1 lb-addtr",//样式 添加的按钮标示class为 lb-addtr
+		            "name":"添加"//名称
+		          },{
+		            "class":"blue1 lb-deltr",//样式 删除的按钮标示class为 lb-deltr
+		            "name":"删除"
+		          }],
+		          "rowspan":false//控制操作列是否合并
+		        },
+				afterLoad:function(){
+					$('#save').bind('click',function(){
+						$('body').find('.dataPost').remove();
+						$.fn.lbTablesEvent({
+							"save":{
+								"id":"#lbTables",//保存的表格的id
+								"list":["wpbh","zlbz","43ew"],//键值名
+								"eq":[1,5,6]//取第几列的值
+							}
+						});
+						$.fn.lbTablesEvent({
+							"save":{
+								"id":"#lbTables2",//保存的表格的id
+								"list":["wpbh"],//键值名
+								"eq":[2]//取第几列的值
+							}
+						});
+					})	
+				}
+			});
+			$('.demo3').lbTables({
+				"id":'lbTables3',//table下的tbody添加id 默认情况下不用设置 如果已有表格存在不需要此项
+				"data":'../lbtables/js/data2.json',//json地址url
+				"get":{"name":"lb"},//get传递参数
+				"width":"60%",
+				"class":'lb-table',//table添加样式 默认情况下不用设置 如果已有表格存在不需要此项
+				"th":col2,
+				"sort":'1', 
+				"editor":{//控制操作列 
+		          "value":true, //是否显示操作列 如果为false 则其他参数可不用设置
+		          "name":"操作",//列标题
+		          "width":'200',//列宽度
+		          "option":"first",//在列首还是列尾 参数值 first last
+		          "align":'center',//列对齐方式 left center right
+		          "btn":[{//操作列的链接名称及样式
+		            "class":"blue1 lb-addtr",//样式 添加的按钮标示class为 lb-addtr
+		            "name":"添加"//名称
+		          },{
+		            "class":"blue1 lb-deltr",//样式 删除的按钮标示class为 lb-deltr
+		            "name":"删除"
+		          }],
+		          "rowspan":false//控制操作列是否合并
+		        }
+			});
+		});
+	</script>
 </body>
 </html>
