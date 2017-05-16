@@ -1,0 +1,709 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="sublime3插件," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="安装sublime3 Package Control
+按下 ctrl+`
+复制粘贴以下代码：1import urllib.request,os,hashlib; h = &apos;eb2297e1a458f27d836c04bb0cbaf282&apos; + &apos;d0e7a3098092775ccb37ca9d6b2e4b7d&apos;; pf = &apos;Package Control.sublime-package&apos;; ip">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sublime3 前端插件">
+<meta property="og:url" content="https://lbking666666.github.io/2017/05/16/sublime3-前端插件/index.html">
+<meta property="og:site_name" content="逍遥阁">
+<meta property="og:description" content="安装sublime3 Package Control
+按下 ctrl+`
+复制粘贴以下代码：1import urllib.request,os,hashlib; h = &apos;eb2297e1a458f27d836c04bb0cbaf282&apos; + &apos;d0e7a3098092775ccb37ca9d6b2e4b7d&apos;; pf = &apos;Package Control.sublime-package&apos;; ip">
+<meta property="og:updated_time" content="2017-05-16T08:46:58.222Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sublime3 前端插件">
+<meta name="twitter:description" content="安装sublime3 Package Control
+按下 ctrl+`
+复制粘贴以下代码：1import urllib.request,os,hashlib; h = &apos;eb2297e1a458f27d836c04bb0cbaf282&apos; + &apos;d0e7a3098092775ccb37ca9d6b2e4b7d&apos;; pf = &apos;Package Control.sublime-package&apos;; ip">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://lbking666666.github.io/2017/05/16/sublime3-前端插件/"/>
+
+
+  <title> sublime3 前端插件 | 逍遥阁 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?4a5fe449a69fe58ea400a6e9ac4a7f4c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">逍遥阁</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">关注前端开发</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                sublime3 前端插件
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-05-16T14:48:33+08:00" content="2017-05-16">
+              2017-05-16
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/05/16/sublime3-前端插件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/16/sublime3-前端插件/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="安装sublime3-Package-Control"><a href="#安装sublime3-Package-Control" class="headerlink" title="安装sublime3 Package Control"></a>安装sublime3 Package Control</h1><ul>
+<li>按下 ctrl+`</li>
+<li>复制粘贴以下代码：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import urllib.request,os,hashlib; h = <span class="string">'eb2297e1a458f27d836c04bb0cbaf282'</span> + <span class="string">'d0e7a3098092775ccb37ca9d6b2e4b7d'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); <span class="built_in">print</span>(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="安装sublime3插件"><a href="#安装sublime3插件" class="headerlink" title="安装sublime3插件"></a>安装sublime3插件</h1><ul>
+<li>按下 ctrl+shift+p，输入’ip’（Install Package）</li>
+<li><p>输入以下插件的名字，按顺序逐个进行安装：</p>
+<ul>
+<li>Emmet （编码快捷键，前端必备）</li>
+<li>Alignment（”=”号对齐）</li>
+<li>autoprefixer (CSS添加私有前缀)</li>
+<li>EditorConfig</li>
+<li>LESS（LESS高亮插件）</li>
+<li>jQuery (jquery 语法提示)</li>
+<li>Sass (Sass高亮插件)</li>
+<li>SublimeLinter ()</li>
+<li>SublimeLinter-jscs (js代码风格检查工具)</li>
+<li>SublimeLinter-jshint (js 代码检查)</li>
+<li>SublimeLinter-csslint (css 代码检查)</li>
+<li>SublimeLinter-contrib-scss-lint (sass 代码检查)</li>
+<li>JSFormat (JavaScript的代码格式化插件)</li>
+<li>CSScomb (css的代码格式化插件)</li>
+</ul>
+<h1 id="安装node包"><a href="#安装node包" class="headerlink" title="安装node包"></a>安装node包</h1><p>jscs</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g jscs</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>jshint<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g jshint</div></pre></td></tr></table></figure></p>
+<p>csscomb<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g csscomb</div></pre></td></tr></table></figure></p>
+<p>csslint<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g csslint</div></pre></td></tr></table></figure></p>
+<h1 id="编辑器及插件设置"><a href="#编辑器及插件设置" class="headerlink" title="编辑器及插件设置"></a>编辑器及插件设置</h1><ul>
+<li><p>sublime3 自身<br>  Preferences-&gt;Setting-User，增加下面两个配置：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"translate_tabs_to_spaces"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="string">"word_wrap"</span>: <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>JSFormat<br>  Preferences-&gt;Package Settings-&gt;JSFormat-&gt;Setting-User:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"indent_size"</span>: 4,</div><div class="line">    <span class="string">"indent_char"</span>: <span class="string">" "</span>,</div><div class="line">    <span class="string">"eol"</span>: <span class="string">"\n"</span>,</div><div class="line">    <span class="string">"indent_level"</span>: 0,</div><div class="line">    <span class="string">"indent_with_tabs"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="string">"preserve_newlines"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="string">"max_preserve_newlines"</span>: 10,</div><div class="line">    <span class="string">"jslint_happy"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="string">"space_after_anon_function"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="string">"brace_style"</span>: <span class="string">"collapse"</span>,</div><div class="line">    <span class="string">"keep_array_indentation"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="string">"keep_function_indentation"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="string">"space_before_conditional"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="string">"break_chained_methods"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="string">"eval_code"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="string">"unescape_strings"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="string">"wrap_line_length"</span>: 0,</div><div class="line">    <span class="string">"wrap_attributes"</span>: <span class="string">"auto"</span>,</div><div class="line">    <span class="string">"wrap_attributes_indent_size"</span>: 4,</div><div class="line">    <span class="string">"end_with_newline"</span>: <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  配置好后格式化的默认快捷键是 ctrl+alt+f</p>
+</li>
+<li><p>CSScomb<br>  Preferences-&gt;Package Settings-&gt;CSScomb-&gt;Setting-User:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div><div class="line">278</div><div class="line">279</div><div class="line">280</div><div class="line">281</div><div class="line">282</div><div class="line">283</div><div class="line">284</div><div class="line">285</div><div class="line">286</div><div class="line">287</div><div class="line">288</div><div class="line">289</div><div class="line">290</div><div class="line">291</div><div class="line">292</div><div class="line">293</div><div class="line">294</div><div class="line">295</div><div class="line">296</div><div class="line">297</div><div class="line">298</div><div class="line">299</div><div class="line">300</div><div class="line">301</div><div class="line">302</div><div class="line">303</div><div class="line">304</div><div class="line">305</div><div class="line">306</div><div class="line">307</div><div class="line">308</div><div class="line">309</div><div class="line">310</div><div class="line">311</div><div class="line">312</div><div class="line">313</div><div class="line">314</div><div class="line">315</div><div class="line">316</div><div class="line">317</div><div class="line">318</div><div class="line">319</div><div class="line">320</div><div class="line">321</div><div class="line">322</div><div class="line">323</div><div class="line">324</div><div class="line">325</div><div class="line">326</div><div class="line">327</div><div class="line">328</div><div class="line">329</div><div class="line">330</div><div class="line">331</div><div class="line">332</div><div class="line">333</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"config"</span>: &#123;</div><div class="line">        <span class="string">"remove-empty-rulesets"</span>: <span class="literal">true</span>,</div><div class="line">        <span class="string">"always-semicolon"</span>: <span class="literal">true</span>,</div><div class="line">        <span class="string">"color-case"</span>: <span class="string">"lower"</span>,</div><div class="line">        <span class="string">"block-indent"</span>: <span class="string">"    "</span>,</div><div class="line">        <span class="string">"color-shorthand"</span>: <span class="literal">true</span>,</div><div class="line">        <span class="string">"element-case"</span>: <span class="string">"lower"</span>,</div><div class="line">        <span class="string">"eof-newline"</span>: <span class="literal">true</span>,</div><div class="line">        <span class="string">"leading-zero"</span>: <span class="literal">false</span>,</div><div class="line">        <span class="string">"quotes"</span>: <span class="string">"double"</span>,</div><div class="line">        <span class="string">"sort-order-fallback"</span>: <span class="string">"abc"</span>,</div><div class="line">        <span class="string">"space-before-colon"</span>: <span class="string">""</span>,</div><div class="line">        <span class="string">"space-after-colon"</span>: <span class="string">" "</span>,</div><div class="line">        <span class="string">"space-before-combinator"</span>: <span class="string">" "</span>,</div><div class="line">        <span class="string">"space-after-combinator"</span>: <span class="string">" "</span>,</div><div class="line">        <span class="string">"space-between-declarations"</span>: <span class="string">"\n"</span>,</div><div class="line">        <span class="string">"space-before-opening-brace"</span>: <span class="string">" "</span>,</div><div class="line">        <span class="string">"space-after-opening-brace"</span>: <span class="string">"\n"</span>,</div><div class="line">        <span class="string">"space-after-selector-delimiter"</span>: <span class="string">"\n"</span>,</div><div class="line">        <span class="string">"space-before-selector-delimiter"</span>: <span class="string">""</span>,</div><div class="line">        <span class="string">"space-before-closing-brace"</span>: <span class="string">"\n"</span>,</div><div class="line">        <span class="string">"strip-spaces"</span>: <span class="literal">true</span>,</div><div class="line">        <span class="string">"tab-size"</span>: <span class="literal">true</span>,</div><div class="line">        <span class="string">"unitless-zero"</span>: <span class="literal">true</span>,</div><div class="line">        <span class="string">"vendor-prefix-align"</span>: <span class="literal">true</span>,</div><div class="line">        <span class="string">"sort-order"</span>: [</div><div class="line">            [</div><div class="line">                <span class="string">"display"</span>,</div><div class="line">                <span class="string">"visibility"</span>,</div><div class="line">                <span class="string">"float"</span>,</div><div class="line">                <span class="string">"clear"</span>,</div><div class="line">                <span class="string">"overflow"</span>,</div><div class="line">                <span class="string">"overflow-x"</span>,</div><div class="line">                <span class="string">"overflow-y"</span>,</div><div class="line">                <span class="string">"clip"</span>,</div><div class="line">                <span class="string">"zoom"</span></div><div class="line">            ],</div><div class="line">            [</div><div class="line">                <span class="string">"table-layout"</span>,</div><div class="line">                <span class="string">"empty-cells"</span>,</div><div class="line">                <span class="string">"caption-side"</span>,</div><div class="line">                <span class="string">"border-spacing"</span>,</div><div class="line">                <span class="string">"border-collapse"</span>,</div><div class="line">                <span class="string">"list-style"</span>,</div><div class="line">                <span class="string">"list-style-position"</span>,</div><div class="line">                <span class="string">"list-style-type"</span>,</div><div class="line">                <span class="string">"list-style-image"</span></div><div class="line">            ],</div><div class="line">            [</div><div class="line">                <span class="string">"-webkit-box-orient"</span>,</div><div class="line">                <span class="string">"-webkit-box-direction"</span>,</div><div class="line">                <span class="string">"-webkit-box-decoration-break"</span>,</div><div class="line">                <span class="string">"-webkit-box-pack"</span>,</div><div class="line">                <span class="string">"-webkit-box-align"</span>,</div><div class="line">                <span class="string">"-webkit-box-flex"</span></div><div class="line">            ],</div><div class="line">            [</div><div class="line">                <span class="string">"position"</span>,</div><div class="line">                <span class="string">"top"</span>,</div><div class="line">                <span class="string">"right"</span>,</div><div class="line">                <span class="string">"bottom"</span>,</div><div class="line">                <span class="string">"left"</span>,</div><div class="line">                <span class="string">"z-index"</span></div><div class="line">            ],</div><div class="line">            [</div><div class="line">                <span class="string">"margin"</span>,</div><div class="line">                <span class="string">"margin-top"</span>,</div><div class="line">                <span class="string">"margin-right"</span>,</div><div class="line">                <span class="string">"margin-bottom"</span>,</div><div class="line">                <span class="string">"margin-left"</span>,</div><div class="line">                <span class="string">"-webkit-box-sizing"</span>,</div><div class="line">                <span class="string">"-moz-box-sizing"</span>,</div><div class="line">                <span class="string">"box-sizing"</span>,</div><div class="line">                <span class="string">"border"</span>,</div><div class="line">                <span class="string">"border-width"</span>,</div><div class="line">                <span class="string">"border-style"</span>,</div><div class="line">                <span class="string">"border-color"</span>,</div><div class="line">                <span class="string">"border-top"</span>,</div><div class="line">                <span class="string">"border-top-width"</span>,</div><div class="line">                <span class="string">"border-top-style"</span>,</div><div class="line">                <span class="string">"border-top-color"</span>,</div><div class="line">                <span class="string">"border-right"</span>,</div><div class="line">                <span class="string">"border-right-width"</span>,</div><div class="line">                <span class="string">"border-right-style"</span>,</div><div class="line">                <span class="string">"border-right-color"</span>,</div><div class="line">                <span class="string">"border-bottom"</span>,</div><div class="line">                <span class="string">"border-bottom-width"</span>,</div><div class="line">                <span class="string">"border-bottom-style"</span>,</div><div class="line">                <span class="string">"border-bottom-color"</span>,</div><div class="line">                <span class="string">"border-left"</span>,</div><div class="line">                <span class="string">"border-left-width"</span>,</div><div class="line">                <span class="string">"border-left-style"</span>,</div><div class="line">                <span class="string">"border-left-color"</span>,</div><div class="line">                <span class="string">"-webkit-border-radius"</span>,</div><div class="line">                <span class="string">"-moz-border-radius"</span>,</div><div class="line">                <span class="string">"border-radius"</span>,</div><div class="line">                <span class="string">"-webkit-border-top-left-radius"</span>,</div><div class="line">                <span class="string">"-moz-border-radius-topleft"</span>,</div><div class="line">                <span class="string">"border-top-left-radius"</span>,</div><div class="line">                <span class="string">"-webkit-border-top-right-radius"</span>,</div><div class="line">                <span class="string">"-moz-border-radius-topright"</span>,</div><div class="line">                <span class="string">"border-top-right-radius"</span>,</div><div class="line">                <span class="string">"-webkit-border-bottom-right-radius"</span>,</div><div class="line">                <span class="string">"-moz-border-radius-bottomright"</span>,</div><div class="line">                <span class="string">"border-bottom-right-radius"</span>,</div><div class="line">                <span class="string">"-webkit-border-bottom-left-radius"</span>,</div><div class="line">                <span class="string">"-moz-border-radius-bottomleft"</span>,</div><div class="line">                <span class="string">"border-bottom-left-radius"</span>,</div><div class="line">                <span class="string">"-webkit-border-image"</span>,</div><div class="line">                <span class="string">"-moz-border-image"</span>,</div><div class="line">                <span class="string">"-o-border-image"</span>,</div><div class="line">                <span class="string">"border-image"</span>,</div><div class="line">                <span class="string">"-webkit-border-image-source"</span>,</div><div class="line">                <span class="string">"-moz-border-image-source"</span>,</div><div class="line">                <span class="string">"-o-border-image-source"</span>,</div><div class="line">                <span class="string">"border-image-source"</span>,</div><div class="line">                <span class="string">"-webkit-border-image-slice"</span>,</div><div class="line">                <span class="string">"-moz-border-image-slice"</span>,</div><div class="line">                <span class="string">"-o-border-image-slice"</span>,</div><div class="line">                <span class="string">"border-image-slice"</span>,</div><div class="line">                <span class="string">"-webkit-border-image-width"</span>,</div><div class="line">                <span class="string">"-moz-border-image-width"</span>,</div><div class="line">                <span class="string">"-o-border-image-width"</span>,</div><div class="line">                <span class="string">"border-image-width"</span>,</div><div class="line">                <span class="string">"-webkit-border-image-outset"</span>,</div><div class="line">                <span class="string">"-moz-border-image-outset"</span>,</div><div class="line">                <span class="string">"-o-border-image-outset"</span>,</div><div class="line">                <span class="string">"border-image-outset"</span>,</div><div class="line">                <span class="string">"-webkit-border-image-repeat"</span>,</div><div class="line">                <span class="string">"-moz-border-image-repeat"</span>,</div><div class="line">                <span class="string">"-o-border-image-repeat"</span>,</div><div class="line">                <span class="string">"border-image-repeat"</span>,</div><div class="line">                <span class="string">"padding"</span>,</div><div class="line">                <span class="string">"padding-top"</span>,</div><div class="line">                <span class="string">"padding-right"</span>,</div><div class="line">                <span class="string">"padding-bottom"</span>,</div><div class="line">                <span class="string">"padding-left"</span>,</div><div class="line">                <span class="string">"width"</span>,</div><div class="line">                <span class="string">"min-width"</span>,</div><div class="line">                <span class="string">"max-width"</span>,</div><div class="line">                <span class="string">"height"</span>,</div><div class="line">                <span class="string">"min-height"</span>,</div><div class="line">                <span class="string">"max-height"</span></div><div class="line">            ],</div><div class="line">            [</div><div class="line">                <span class="string">"font"</span>,</div><div class="line">                <span class="string">"font-family"</span>,</div><div class="line">                <span class="string">"font-size"</span>,</div><div class="line">                <span class="string">"font-weight"</span>,</div><div class="line">                <span class="string">"font-style"</span>,</div><div class="line">                <span class="string">"font-variant"</span>,</div><div class="line">                <span class="string">"font-size-adjust"</span>,</div><div class="line">                <span class="string">"font-stretch"</span>,</div><div class="line">                <span class="string">"font-effect"</span>,</div><div class="line">                <span class="string">"font-emphasize"</span>,</div><div class="line">                <span class="string">"font-emphasize-position"</span>,</div><div class="line">                <span class="string">"font-emphasize-style"</span>,</div><div class="line">                <span class="string">"font-smooth"</span>,</div><div class="line">                <span class="string">"line-height"</span>,</div><div class="line">                <span class="string">"text-align"</span>,</div><div class="line">                <span class="string">"-webkit-text-align-last"</span>,</div><div class="line">                <span class="string">"-moz-text-align-last"</span>,</div><div class="line">                <span class="string">"-ms-text-align-last"</span>,</div><div class="line">                <span class="string">"text-align-last"</span>,</div><div class="line">                <span class="string">"vertical-align"</span>,</div><div class="line">                <span class="string">"white-space"</span>,</div><div class="line">                <span class="string">"text-decoration"</span>,</div><div class="line">                <span class="string">"text-emphasis"</span>,</div><div class="line">                <span class="string">"text-emphasis-color"</span>,</div><div class="line">                <span class="string">"text-emphasis-style"</span>,</div><div class="line">                <span class="string">"text-emphasis-position"</span>,</div><div class="line">                <span class="string">"text-indent"</span>,</div><div class="line">                <span class="string">"-ms-text-justify"</span>,</div><div class="line">                <span class="string">"text-justify"</span>,</div><div class="line">                <span class="string">"letter-spacing"</span>,</div><div class="line">                <span class="string">"word-spacing"</span>,</div><div class="line">                <span class="string">"-ms-writing-mode"</span>,</div><div class="line">                <span class="string">"text-outline"</span>,</div><div class="line">                <span class="string">"text-transform"</span>,</div><div class="line">                <span class="string">"text-wrap"</span>,</div><div class="line">                <span class="string">"-ms-text-overflow"</span>,</div><div class="line">                <span class="string">"text-overflow"</span>,</div><div class="line">                <span class="string">"text-overflow-ellipsis"</span>,</div><div class="line">                <span class="string">"text-overflow-mode"</span>,</div><div class="line">                <span class="string">"-ms-word-wrap"</span>,</div><div class="line">                <span class="string">"word-wrap"</span>,</div><div class="line">                <span class="string">"-ms-word-break"</span>,</div><div class="line">                <span class="string">"word-break"</span></div><div class="line">            ],</div><div class="line">            [</div><div class="line">                <span class="string">"color"</span>,</div><div class="line">                <span class="string">"background"</span>,</div><div class="line">                <span class="string">"filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"</span>,</div><div class="line">                <span class="string">"background-color"</span>,</div><div class="line">                <span class="string">"background-image"</span>,</div><div class="line">                <span class="string">"background-repeat"</span>,</div><div class="line">                <span class="string">"background-attachment"</span>,</div><div class="line">                <span class="string">"background-position"</span>,</div><div class="line">                <span class="string">"-ms-background-position-x"</span>,</div><div class="line">                <span class="string">"background-position-x"</span>,</div><div class="line">                <span class="string">"-ms-background-position-y"</span>,</div><div class="line">                <span class="string">"background-position-y"</span>,</div><div class="line">                <span class="string">"-webkit-background-clip"</span>,</div><div class="line">                <span class="string">"-moz-background-clip"</span>,</div><div class="line">                <span class="string">"background-clip"</span>,</div><div class="line">                <span class="string">"background-origin"</span>,</div><div class="line">                <span class="string">"-webkit-background-size"</span>,</div><div class="line">                <span class="string">"-moz-background-size"</span>,</div><div class="line">                <span class="string">"-o-background-size"</span>,</div><div class="line">                <span class="string">"background-size"</span></div><div class="line">            ],</div><div class="line">            [</div><div class="line">                <span class="string">"outline"</span>,</div><div class="line">                <span class="string">"outline-width"</span>,</div><div class="line">                <span class="string">"outline-style"</span>,</div><div class="line">                <span class="string">"outline-color"</span>,</div><div class="line">                <span class="string">"outline-offset"</span>,</div><div class="line">                <span class="string">"opacity"</span>,</div><div class="line">                <span class="string">"filter:progid:DXImageTransform.Microsoft.Alpha(Opacity"</span>,</div><div class="line">                <span class="string">"-ms-filter:\\'progid:DXImageTransform.Microsoft.Alpha"</span>,</div><div class="line">                <span class="string">"-ms-interpolation-mode"</span>,</div><div class="line">                <span class="string">"-webkit-box-shadow"</span>,</div><div class="line">                <span class="string">"-moz-box-shadow"</span>,</div><div class="line">                <span class="string">"box-shadow"</span>,</div><div class="line">                <span class="string">"filter:progid:DXImageTransform.Microsoft.gradient"</span>,</div><div class="line">                <span class="string">"-ms-filter:\\'progid:DXImageTransform.Microsoft.gradient"</span>,</div><div class="line">                <span class="string">"text-shadow"</span></div><div class="line">            ],</div><div class="line">            [</div><div class="line">                <span class="string">"-webkit-transition"</span>,</div><div class="line">                <span class="string">"-moz-transition"</span>,</div><div class="line">                <span class="string">"-ms-transition"</span>,</div><div class="line">                <span class="string">"-o-transition"</span>,</div><div class="line">                <span class="string">"transition"</span>,</div><div class="line">                <span class="string">"-webkit-transition-delay"</span>,</div><div class="line">                <span class="string">"-moz-transition-delay"</span>,</div><div class="line">                <span class="string">"-ms-transition-delay"</span>,</div><div class="line">                <span class="string">"-o-transition-delay"</span>,</div><div class="line">                <span class="string">"transition-delay"</span>,</div><div class="line">                <span class="string">"-webkit-transition-timing-function"</span>,</div><div class="line">                <span class="string">"-moz-transition-timing-function"</span>,</div><div class="line">                <span class="string">"-ms-transition-timing-function"</span>,</div><div class="line">                <span class="string">"-o-transition-timing-function"</span>,</div><div class="line">                <span class="string">"transition-timing-function"</span>,</div><div class="line">                <span class="string">"-webkit-transition-duration"</span>,</div><div class="line">                <span class="string">"-moz-transition-duration"</span>,</div><div class="line">                <span class="string">"-ms-transition-duration"</span>,</div><div class="line">                <span class="string">"-o-transition-duration"</span>,</div><div class="line">                <span class="string">"transition-duration"</span>,</div><div class="line">                <span class="string">"-webkit-transition-property"</span>,</div><div class="line">                <span class="string">"-moz-transition-property"</span>,</div><div class="line">                <span class="string">"-ms-transition-property"</span>,</div><div class="line">                <span class="string">"-o-transition-property"</span>,</div><div class="line">                <span class="string">"transition-property"</span>,</div><div class="line">                <span class="string">"-webkit-transform"</span>,</div><div class="line">                <span class="string">"-moz-transform"</span>,</div><div class="line">                <span class="string">"-ms-transform"</span>,</div><div class="line">                <span class="string">"-o-transform"</span>,</div><div class="line">                <span class="string">"transform"</span>,</div><div class="line">                <span class="string">"-webkit-transform-origin"</span>,</div><div class="line">                <span class="string">"-moz-transform-origin"</span>,</div><div class="line">                <span class="string">"-ms-transform-origin"</span>,</div><div class="line">                <span class="string">"-o-transform-origin"</span>,</div><div class="line">                <span class="string">"transform-origin"</span>,</div><div class="line">                <span class="string">"-webkit-animation"</span>,</div><div class="line">                <span class="string">"-moz-animation"</span>,</div><div class="line">                <span class="string">"-ms-animation"</span>,</div><div class="line">                <span class="string">"-o-animation"</span>,</div><div class="line">                <span class="string">"animation"</span>,</div><div class="line">                <span class="string">"-webkit-animation-name"</span>,</div><div class="line">                <span class="string">"-moz-animation-name"</span>,</div><div class="line">                <span class="string">"-ms-animation-name"</span>,</div><div class="line">                <span class="string">"-o-animation-name"</span>,</div><div class="line">                <span class="string">"animation-name"</span>,</div><div class="line">                <span class="string">"-webkit-animation-duration"</span>,</div><div class="line">                <span class="string">"-moz-animation-duration"</span>,</div><div class="line">                <span class="string">"-ms-animation-duration"</span>,</div><div class="line">                <span class="string">"-o-animation-duration"</span>,</div><div class="line">                <span class="string">"animation-duration"</span>,</div><div class="line">                <span class="string">"-webkit-animation-play-state"</span>,</div><div class="line">                <span class="string">"-moz-animation-play-state"</span>,</div><div class="line">                <span class="string">"-ms-animation-play-state"</span>,</div><div class="line">                <span class="string">"-o-animation-play-state"</span>,</div><div class="line">                <span class="string">"animation-play-state"</span>,</div><div class="line">                <span class="string">"-webkit-animation-timing-function"</span>,</div><div class="line">                <span class="string">"-moz-animation-timing-function"</span>,</div><div class="line">                <span class="string">"-ms-animation-timing-function"</span>,</div><div class="line">                <span class="string">"-o-animation-timing-function"</span>,</div><div class="line">                <span class="string">"animation-timing-function"</span>,</div><div class="line">                <span class="string">"-webkit-animation-delay"</span>,</div><div class="line">                <span class="string">"-moz-animation-delay"</span>,</div><div class="line">                <span class="string">"-ms-animation-delay"</span>,</div><div class="line">                <span class="string">"-o-animation-delay"</span>,</div><div class="line">                <span class="string">"animation-delay"</span>,</div><div class="line">                <span class="string">"-webkit-animation-iteration-count"</span>,</div><div class="line">                <span class="string">"-moz-animation-iteration-count"</span>,</div><div class="line">                <span class="string">"-ms-animation-iteration-count"</span>,</div><div class="line">                <span class="string">"-o-animation-iteration-count"</span>,</div><div class="line">                <span class="string">"animation-iteration-count"</span>,</div><div class="line">                <span class="string">"-webkit-animation-direction"</span>,</div><div class="line">                <span class="string">"-moz-animation-direction"</span>,</div><div class="line">                <span class="string">"-ms-animation-direction"</span>,</div><div class="line">                <span class="string">"-o-animation-direction"</span>,</div><div class="line">                <span class="string">"animation-direction"</span></div><div class="line">            ],</div><div class="line">            [</div><div class="line">                <span class="string">"content"</span>,</div><div class="line">                <span class="string">"quotes"</span>,</div><div class="line">                <span class="string">"counter-reset"</span>,</div><div class="line">                <span class="string">"counter-increment"</span>,</div><div class="line">                <span class="string">"resize"</span>,</div><div class="line">                <span class="string">"cursor"</span>,</div><div class="line">                <span class="string">"-webkit-user-select"</span>,</div><div class="line">                <span class="string">"-moz-user-select"</span>,</div><div class="line">                <span class="string">"-ms-user-select"</span>,</div><div class="line">                <span class="string">"user-select"</span>,</div><div class="line">                <span class="string">"nav-index"</span>,</div><div class="line">                <span class="string">"nav-up"</span>,</div><div class="line">                <span class="string">"nav-right"</span>,</div><div class="line">                <span class="string">"nav-down"</span>,</div><div class="line">                <span class="string">"nav-left"</span>,</div><div class="line">                <span class="string">"-moz-tab-size"</span>,</div><div class="line">                <span class="string">"-o-tab-size"</span>,</div><div class="line">                <span class="string">"tab-size"</span>,</div><div class="line">                <span class="string">"-webkit-hyphens"</span>,</div><div class="line">                <span class="string">"-moz-hyphens"</span>,</div><div class="line">                <span class="string">"hyphens"</span>,</div><div class="line">                <span class="string">"pointer-events"</span></div><div class="line">            ]</div><div class="line">        ]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  配置好后格式化的默认快捷键是 ctrl+shift+c</p>
+</li>
+<li><p>SublimeLinter</p>
+<p>  右键-&gt;SublimeLinter-&gt;Lint Mode，有4种检查模式，建议选择 Load/save</p>
+<p>  右键-&gt;SublimeLinter-&gt;Mark Style，建议选择 Outline</p>
+<p>  右键-&gt;SublimeLinter-&gt;Choose Gutter Theme，建议选择 Blueberry-round</p>
+<p>  右键-&gt;SublimeLinter-&gt;Open User Settings，将linter里面jscs的args改成 [“–verbose”]，将linter里面csslint的ignore改成 [<br>  “box-model,adjoining-classes,box-sizing,compatible-vendor-prefixes,gradients,text-indent,fallback-colors,star-property-hack,underscore-property-hack,bulletproof-font-face,order-alphabetical,font-faces,import,regex-selectors,universal-selector,unqualified-attributes,overqualified-elements,duplicate-background-images,floats,font-sizes,ids,important,outline-none,qualified-headings,unique-headings”]</p>
+<p>  当光标处于有错误的代码行时，详细的错误信息会显示在下面的状态栏中</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/sublime3插件/" rel="tag">#sublime3插件</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/15/使用gulp搭建自动化web前端工具/" rel="next" title="使用gulp搭建自动化web前端工具">
+                <i class="fa fa-chevron-left"></i> 使用gulp搭建自动化web前端工具
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/05/16/sublime3-前端插件/"
+           data-title="sublime3 前端插件" data-url="https://lbking666666.github.io/2017/05/16/sublime3-前端插件/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="吕彬" />
+          <p class="site-author-name" itemprop="name">吕彬</p>
+          <p class="site-description motion-element" itemprop="description">经不起千世的骂名，怎经得起万世流芳！</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lbking666666" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/lbking66666" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/# 286504720" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/# lbking666666" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装sublime3-Package-Control"><span class="nav-number">1.</span> <span class="nav-text">安装sublime3 Package Control</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装sublime3插件"><span class="nav-number">2.</span> <span class="nav-text">安装sublime3插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装node包"><span class="nav-number">3.</span> <span class="nav-text">安装node包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编辑器及插件设置"><span class="nav-number">4.</span> <span class="nav-text">编辑器及插件设置</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吕彬</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lbking666666"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
