@@ -84,22 +84,40 @@
 
 
 
-<meta name="description" content="操作系统是windows的，没有折腾其他的操作系统
-1.node.js官网下载，选择左侧的稳定版;2.安装就一直next就可以了；3.安装完成后打开cmd，输入12node -vnpm -v
-查看node和npm是否安装上；">
+<meta name="description" content="npm使用package.json管理依赖+ 创建并简单配置package.json文件:
+    1npm init
+
++ Package.json 属性说明
+    &amp;gt;name - 包名。
+    &amp;gt;version - 包的版本号。
+    &amp;gt;description - 包的描述。
+    &amp;gt;homepage - 包的官网 url 。
+    &amp;gt;author -">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安装node.js">
-<meta property="og:url" content="https://lbking666666.github.io/2016/01/11/安装node-js/index.html">
+<meta property="og:title" content="npm">
+<meta property="og:url" content="https://lbking666666.github.io/2016/05/31/node-基础知识/index.html">
 <meta property="og:site_name" content="逍遥阁">
-<meta property="og:description" content="操作系统是windows的，没有折腾其他的操作系统
-1.node.js官网下载，选择左侧的稳定版;2.安装就一直next就可以了；3.安装完成后打开cmd，输入12node -vnpm -v
-查看node和npm是否安装上；">
-<meta property="og:updated_time" content="2017-05-17T01:09:15.978Z">
+<meta property="og:description" content="npm使用package.json管理依赖+ 创建并简单配置package.json文件:
+    1npm init
+
++ Package.json 属性说明
+    &amp;gt;name - 包名。
+    &amp;gt;version - 包的版本号。
+    &amp;gt;description - 包的描述。
+    &amp;gt;homepage - 包的官网 url 。
+    &amp;gt;author -">
+<meta property="og:updated_time" content="2017-06-01T00:44:18.071Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安装node.js">
-<meta name="twitter:description" content="操作系统是windows的，没有折腾其他的操作系统
-1.node.js官网下载，选择左侧的稳定版;2.安装就一直next就可以了；3.安装完成后打开cmd，输入12node -vnpm -v
-查看node和npm是否安装上；">
+<meta name="twitter:title" content="npm">
+<meta name="twitter:description" content="npm使用package.json管理依赖+ 创建并简单配置package.json文件:
+    1npm init
+
++ Package.json 属性说明
+    &amp;gt;name - 包名。
+    &amp;gt;version - 包的版本号。
+    &amp;gt;description - 包的描述。
+    &amp;gt;homepage - 包的官网 url 。
+    &amp;gt;author -">
 
 
 
@@ -120,10 +138,10 @@
 
 
 
-  <link rel="canonical" href="https://lbking666666.github.io/2016/01/11/安装node-js/"/>
+  <link rel="canonical" href="https://lbking666666.github.io/2016/05/31/node-基础知识/"/>
 
 
-  <title> 安装node.js | 逍遥阁 </title>
+  <title> npm | 逍遥阁 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +281,7 @@
             
             
               
-                安装node.js
+                npm
               
             
           </h1>
@@ -275,8 +293,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-11T09:18:33+08:00" content="2016-01-11">
-              2016-01-11
+            <time itemprop="dateCreated" datetime="2016-05-31T09:32:38+08:00" content="2016-05-31">
+              2016-05-31
             </time>
           </span>
 
@@ -286,8 +304,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/11/安装node-js/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/11/安装node-js/" itemprop="commentsCount"></span>
+                <a href="/2016/05/31/node-基础知识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/31/node-基础知识/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,10 +328,68 @@
       
 
       
-        <p>操作系统是windows的，没有折腾其他的操作系统</p>
-<h2 id="1-node-js官网下载，选择左侧的稳定版"><a href="#1-node-js官网下载，选择左侧的稳定版" class="headerlink" title="1.node.js官网下载，选择左侧的稳定版;"></a>1.<a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a>官网下载，选择左侧的稳定版;</h2><h2 id="2-安装就一直next就可以了；"><a href="#2-安装就一直next就可以了；" class="headerlink" title="2.安装就一直next就可以了；"></a>2.安装就一直next就可以了；</h2><h2 id="3-安装完成后打开cmd，输入"><a href="#3-安装完成后打开cmd，输入" class="headerlink" title="3.安装完成后打开cmd，输入"></a>3.安装完成后打开cmd，输入</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node -v</div><div class="line">npm -v</div></pre></td></tr></table></figure>
-<p>查看node和npm是否安装上；</p>
+        <h1 id="npm使用package-json管理依赖"><a href="#npm使用package-json管理依赖" class="headerlink" title="npm使用package.json管理依赖"></a>npm使用package.json管理依赖</h1><pre><code>+ 创建并简单配置package.json文件:
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init</div></pre></td></tr></table></figure>
 
++ Package.json 属性说明
+    &gt;name - 包名。
+    &gt;version - 包的版本号。
+    &gt;description - 包的描述。
+    &gt;homepage - 包的官网 url 。
+    &gt;author - 包的作者姓名。
+    &gt;contributors - 包的其他贡献者姓名。
+    &gt;dependencies - 依赖包列表。如果依赖包没有安装，npm 会自动将依赖包安装在 node_module 目录下。
+    &gt;repository - 包代码存放的地方的类型，可以是 git 或 svn，git 可在 Github 上。
+    &gt;main - main 字段是一个模块ID，它是一个指向你程序的主要项目。就是说，如果你包的名字叫 
+    &gt;express，然后用户安装它，然后require(&quot;express&quot;)。
+    &gt;keywords - 关键字
+
++ 安装模块到node-modules文件夹下
+    - 安装pack.json中所有依赖；
+
+    - 在package.json文件中自动把模块和版本号添加到dependencies部分:
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install module-name –-save</div></pre></td></tr></table></figure>
+
+    - 在package.json文件中自动把模块和版本号添加到devdependencies部分:
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install module-name  –-save-dev</div></pre></td></tr></table></figure>
+
++ 卸载模块
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm uninstall moudle-name</div></pre></td></tr></table></figure>
+
++ 更新模块
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm update moudle-name</div></pre></td></tr></table></figure>
+</code></pre><h1 id="版本的格式"><a href="#版本的格式" class="headerlink" title="版本的格式"></a>版本的格式</h1><pre><code>&gt; major.minor.patch
+&gt; 主版本号.次版本号.修补版本号
+
++ b version: 必须匹配某个版本  
+    如：1.1.2，表示必须依赖1.1.2版;
++ b &gt;version: 必须大于某个版本  
+    如：&gt;1.1.2，表示必须大于1.1.2版;
++ b &gt;=version: 可大于或等于某个版本:
+    如：&gt;=1.1.2，表示可以等于1.1.2，也可以大于1.1.2版本;
++ b &lt;version: 必须小于某个版本:
+    如：&lt;1.1.2，表示必须小于1.1.2版本;
++ b &lt;=version: 可以小于或等于某个版本:
+    如：&lt;=1.1.2，表示可以等于1.1.2，也可以小于1.1.2版本;
++ b ~version: 大概匹配某个版本:
+    如：~1.1，表示&gt;=1.1.0 &lt;1.2.0;
++ b ^version: 兼容某个版本:
+    如：^0.0，表示 &gt;=0.0.0 &lt;0.1.0，可以是0.0.0，0.0.1，.....，0.0.n;
++ b x-range:  x的位置表示任意版本:
+    如：1.2.x，表示可以1.2.0，1.2.1，.....，1.2.n;
++ b *-range:  任意版本，&quot;&quot;也表示任意版本:
+    如：*，表示&gt;=0.0.0的任意版本
++ b version1 - version2: 大于等于version1，小于等于version2:
+    如：1.1.2 - 1.3.1，表示包括1.1.2和1.3.1以及他们件的任意版本
++ b range1 || range2: 满足range1或者满足range2，可以多个范围:
+    如：&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 &lt;3.0.0，表示满足这3个范围的版本都可以
+</code></pre><h1 id="淘宝NPM镜像"><a href="#淘宝NPM镜像" class="headerlink" title="淘宝NPM镜像"></a>淘宝NPM镜像</h1><pre><code>淘宝 NPM 镜像是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟一次以保证尽量与官方服务同步。
+你可以使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</div></pre></td></tr></table></figure>
+
+这样就可以使用 cnpm 命令来安装模块了：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cnpm install [name]</div></pre></td></tr></table></figure>
+</code></pre>
       
     </div>
 
@@ -344,12 +420,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/05/16/sublime3-前端插件/" rel="next" title="sublime3 前端插件">
+                <i class="fa fa-chevron-left"></i> sublime3 前端插件
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/09/HEXO-Github搭建博客/" rel="prev" title="HEXO+Github搭建博客">
-                HEXO+Github搭建博客 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/26/前端网址收藏/" rel="prev" title="前端网址收藏">
+                前端网址收藏 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -376,8 +456,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/11/安装node-js/"
-           data-title="安装node.js" data-url="https://lbking666666.github.io/2016/01/11/安装node-js/">
+      <div class="ds-thread" data-thread-key="2016/05/31/node-基础知识/"
+           data-title="npm" data-url="https://lbking666666.github.io/2016/05/31/node-基础知识/">
       </div>
     
   </div>
@@ -499,7 +579,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-node-js官网下载，选择左侧的稳定版"><span class="nav-number">1.</span> <span class="nav-text">1.node.js官网下载，选择左侧的稳定版;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装就一直next就可以了；"><span class="nav-number">2.</span> <span class="nav-text">2.安装就一直next就可以了；</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装完成后打开cmd，输入"><span class="nav-number">3.</span> <span class="nav-text">3.安装完成后打开cmd，输入</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#npm使用package-json管理依赖"><span class="nav-number">1.</span> <span class="nav-text">npm使用package.json管理依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本的格式"><span class="nav-number">2.</span> <span class="nav-text">版本的格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#淘宝NPM镜像"><span class="nav-number">3.</span> <span class="nav-text">淘宝NPM镜像</span></a></li></ol></div>
             
           </div>
         </section>
