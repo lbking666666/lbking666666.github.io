@@ -84,43 +84,37 @@
 
 
 
-<meta name="description" content="npm使用package.json管理依赖- 创建并简单配置package.json文件:
+<meta name="description" content="npm使用package.json管理依赖
+创建并简单配置package.json文件:
 
-    1npm init
+1npm init
 
-- Package.json 属性说明
-    &amp;gt;name - 包名。
-    &amp;gt;version - 包的版本号。
-    &amp;gt;description - 包的描述。
-    &amp;gt;homepage - 包的官网 url 。
-    &amp;gt;author -">
+Package.json 属性说明
+
+name - 包名。version - 包的版本号。description - 包的描述。homepage - 包的官网 url 。author - 包的作者姓名。contributors - 包的其他贡献者姓名。dependencies - 依赖">
 <meta property="og:type" content="article">
 <meta property="og:title" content="npm">
 <meta property="og:url" content="https://lbking666666.github.io/2016/05/31/node-基础知识/index.html">
 <meta property="og:site_name" content="逍遥阁">
-<meta property="og:description" content="npm使用package.json管理依赖- 创建并简单配置package.json文件:
+<meta property="og:description" content="npm使用package.json管理依赖
+创建并简单配置package.json文件:
 
-    1npm init
+1npm init
 
-- Package.json 属性说明
-    &amp;gt;name - 包名。
-    &amp;gt;version - 包的版本号。
-    &amp;gt;description - 包的描述。
-    &amp;gt;homepage - 包的官网 url 。
-    &amp;gt;author -">
-<meta property="og:updated_time" content="2017-06-01T00:47:09.812Z">
+Package.json 属性说明
+
+name - 包名。version - 包的版本号。description - 包的描述。homepage - 包的官网 url 。author - 包的作者姓名。contributors - 包的其他贡献者姓名。dependencies - 依赖">
+<meta property="og:updated_time" content="2017-06-01T00:49:20.219Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm">
-<meta name="twitter:description" content="npm使用package.json管理依赖- 创建并简单配置package.json文件:
+<meta name="twitter:description" content="npm使用package.json管理依赖
+创建并简单配置package.json文件:
 
-    1npm init
+1npm init
 
-- Package.json 属性说明
-    &amp;gt;name - 包名。
-    &amp;gt;version - 包的版本号。
-    &amp;gt;description - 包的描述。
-    &amp;gt;homepage - 包的官网 url 。
-    &amp;gt;author -">
+Package.json 属性说明
+
+name - 包名。version - 包的版本号。description - 包的描述。homepage - 包的官网 url 。author - 包的作者姓名。contributors - 包的其他贡献者姓名。dependencies - 依赖">
 
 
 
@@ -331,75 +325,55 @@
       
 
       
-        <h1 id="npm使用package-json管理依赖"><a href="#npm使用package-json管理依赖" class="headerlink" title="npm使用package.json管理依赖"></a>npm使用package.json管理依赖</h1><pre><code>- 创建并简单配置package.json文件:
-
-    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init</div></pre></td></tr></table></figure>
-
-- Package.json 属性说明
-    &gt;name - 包名。
-    &gt;version - 包的版本号。
-    &gt;description - 包的描述。
-    &gt;homepage - 包的官网 url 。
-    &gt;author - 包的作者姓名。
-    &gt;contributors - 包的其他贡献者姓名。
-    &gt;dependencies - 依赖包列表。如果依赖包没有安装，npm 会自动将依赖包安装在 node_module 目录下。
-    &gt;repository - 包代码存放的地方的类型，可以是 git 或 svn，git 可在 Github 上。
-    &gt;main - main 字段是一个模块ID，它是一个指向你程序的主要项目。就是说，如果你包的名字叫 
-    &gt;express，然后用户安装它，然后require(&quot;express&quot;)。
-    &gt;keywords - 关键字
-
-- 安装模块到node-modules文件夹下
-    - 安装pack.json中所有依赖；
-
-    - 在package.json文件中自动把模块和版本号添加到dependencies部分:
-
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install module-name –-save</div></pre></td></tr></table></figure>
-
-    - 在package.json文件中自动把模块和版本号添加到devdependencies部分:
-
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install module-name  –-save-dev</div></pre></td></tr></table></figure>
-
-- 卸载模块
-
-    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm uninstall moudle-name</div></pre></td></tr></table></figure>
-
-- 更新模块
-
-    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm update moudle-name</div></pre></td></tr></table></figure>
-</code></pre><h1 id="版本的格式"><a href="#版本的格式" class="headerlink" title="版本的格式"></a>版本的格式</h1><pre><code>&gt; major.minor.patch
-&gt; 主版本号.次版本号.修补版本号
-
-- b version: 必须匹配某个版本  
-    如：1.1.2，表示必须依赖1.1.2版;
-- b &gt;version: 必须大于某个版本  
-    如：&gt;1.1.2，表示必须大于1.1.2版;
-- b &gt;=version: 可大于或等于某个版本:
-    如：&gt;=1.1.2，表示可以等于1.1.2，也可以大于1.1.2版本;
-- b &lt;version: 必须小于某个版本:
-    如：&lt;1.1.2，表示必须小于1.1.2版本;
-- b &lt;=version: 可以小于或等于某个版本:
-    如：&lt;=1.1.2，表示可以等于1.1.2，也可以小于1.1.2版本;
-- b ~version: 大概匹配某个版本:
-    如：~1.1，表示&gt;=1.1.0 &lt;1.2.0;
-- b ^version: 兼容某个版本:
-    如：^0.0，表示 &gt;=0.0.0 &lt;0.1.0，可以是0.0.0，0.0.1，.....，0.0.n;
-- b x-range:  x的位置表示任意版本:
-    如：1.2.x，表示可以1.2.0，1.2.1，.....，1.2.n;
-- b *-range:  任意版本，&quot;&quot;也表示任意版本:
-    如：*，表示&gt;=0.0.0的任意版本
-- b version1 - version2: 大于等于version1，小于等于version2:
-    如：1.1.2 - 1.3.1，表示包括1.1.2和1.3.1以及他们件的任意版本
-- b range1 || range2: 满足range1或者满足range2，可以多个范围:
-    如：&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 &lt;3.0.0，表示满足这3个范围的版本都可以
-</code></pre><h1 id="淘宝NPM镜像"><a href="#淘宝NPM镜像" class="headerlink" title="淘宝NPM镜像"></a>淘宝NPM镜像</h1><pre><code>淘宝 NPM 镜像是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟一次以保证尽量与官方服务同步。
-你可以使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:
-
+        <h1 id="npm使用package-json管理依赖"><a href="#npm使用package-json管理依赖" class="headerlink" title="npm使用package.json管理依赖"></a>npm使用package.json管理依赖</h1><ul>
+<li>创建并简单配置package.json文件:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init</div></pre></td></tr></table></figure>
+<ul>
+<li><p>Package.json 属性说明</p>
+<blockquote>
+<p>name - 包名。<br>version - 包的版本号。<br>description - 包的描述。<br>homepage - 包的官网 url 。<br>author - 包的作者姓名。<br>contributors - 包的其他贡献者姓名。<br>dependencies - 依赖包列表。如果依赖包没有安装，npm 会自动将依赖包安装在 node_module 目录下。<br>repository - 包代码存放的地方的类型，可以是 git 或 svn，git 可在 Github 上。<br>main - main 字段是一个模块ID，它是一个指向你程序的主要项目。就是说，如果你包的名字叫<br>express，然后用户安装它，然后require(“express”)。<br>keywords - 关键字</p>
+</blockquote>
+</li>
+<li><p>安装模块到node-modules文件夹下</p>
+</li>
+<li><p>安装pack.json中所有依赖；</p>
+</li>
+<li><p>在package.json文件中自动把模块和版本号添加到dependencies部分:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install module-name –-save</div></pre></td></tr></table></figure>
+</li>
+<li><p>在package.json文件中自动把模块和版本号添加到devdependencies部分:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install module-name  –-save-dev</div></pre></td></tr></table></figure>
+</li>
+<li><p>卸载模块</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm uninstall moudle-name</div></pre></td></tr></table></figure>
+<ul>
+<li>更新模块</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm update moudle-name</div></pre></td></tr></table></figure>
+<h1 id="版本的格式"><a href="#版本的格式" class="headerlink" title="版本的格式"></a>版本的格式</h1><blockquote>
+<p>major.minor.patch<br>主版本号.次版本号.修补版本号</p>
+</blockquote>
+<ul>
+<li>b version: 必须匹配某个版本<br>如：1.1.2，表示必须依赖1.1.2版;</li>
+<li>b &gt;version: 必须大于某个版本<br>如：&gt;1.1.2，表示必须大于1.1.2版;</li>
+<li>b &gt;=version: 可大于或等于某个版本:<br>如：&gt;=1.1.2，表示可以等于1.1.2，也可以大于1.1.2版本;</li>
+<li>b &lt;version: 必须小于某个版本:<br>如：&lt;1.1.2，表示必须小于1.1.2版本;</li>
+<li>b &lt;=version: 可以小于或等于某个版本:<br>如：&lt;=1.1.2，表示可以等于1.1.2，也可以小于1.1.2版本;</li>
+<li>b ~version: 大概匹配某个版本:<br>如：~1.1，表示&gt;=1.1.0 &lt;1.2.0;</li>
+<li>b ^version: 兼容某个版本:<br>如：^0.0，表示 &gt;=0.0.0 &lt;0.1.0，可以是0.0.0，0.0.1，…..，0.0.n;</li>
+<li>b x-range:  x的位置表示任意版本:<br>如：1.2.x，表示可以1.2.0，1.2.1，…..，1.2.n;</li>
+<li>b <em>-range:  任意版本，””也表示任意版本:<br>如：</em>，表示&gt;=0.0.0的任意版本</li>
+<li>b version1 - version2: 大于等于version1，小于等于version2:<br>如：1.1.2 - 1.3.1，表示包括1.1.2和1.3.1以及他们件的任意版本</li>
+<li>b range1 || range2: 满足range1或者满足range2，可以多个范围:<br>如：<1.0.0 ||="">=2.3.1 <2.4.5 ||="">=2.5.2 &lt;3.0.0，表示满足这3个范围的版本都可以</2.4.5></1.0.0></li>
+</ul>
+<h1 id="淘宝NPM镜像"><a href="#淘宝NPM镜像" class="headerlink" title="淘宝NPM镜像"></a>淘宝NPM镜像</h1><p>淘宝 NPM 镜像是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟一次以保证尽量与官方服务同步。<br>你可以使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</div></pre></td></tr></table></figure>
-
-这样就可以使用 cnpm 命令来安装模块了：
-
+<p>这样就可以使用 cnpm 命令来安装模块了：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cnpm install [name]</div></pre></td></tr></table></figure>
-</code></pre>
+
       
     </div>
 
