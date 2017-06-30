@@ -84,25 +84,28 @@
 
 
 
-<meta name="description" content="构造函数- 默认函数首字母大写
-- 构造函数并没有显示返回任何东西。new 操作符会自动创建给定的类型并返回他们，当调用构造函数时，new会自动创建this对象，且类型就是构造函数类型。
-- 也可以在构造函数中显示调用return.如果返回的值是一个对象，它会代替新创建的对象实例返回。如果返回的值是一个原始类型，它会被忽略，新创建的实例会被返回。  
-- 因为构造函数也是函数，所以可以直接被调用，">
+<meta name="description" content="构造函数
+默认函数首字母大写
+构造函数并没有显示返回任何东西。new 操作符会自动创建给定的类型并返回他们，当调用构造函数时，new会自动创建this对象，且类型就是构造函数类型。
+也可以在构造函数中显示调用return.如果返回的值是一个对象，它会代替新创建的对象实例返回。如果返回的值是一个原始类型，它会被忽略，新创建的实例会被返回。  
+因为构造函数也是函数，所以可以直接被调用，但是它的返回值">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js面向对象">
 <meta property="og:url" content="https://lbking666666.github.io/2017/05/31/js面向对象/index.html">
 <meta property="og:site_name" content="逍遥阁">
-<meta property="og:description" content="构造函数- 默认函数首字母大写
-- 构造函数并没有显示返回任何东西。new 操作符会自动创建给定的类型并返回他们，当调用构造函数时，new会自动创建this对象，且类型就是构造函数类型。
-- 也可以在构造函数中显示调用return.如果返回的值是一个对象，它会代替新创建的对象实例返回。如果返回的值是一个原始类型，它会被忽略，新创建的实例会被返回。  
-- 因为构造函数也是函数，所以可以直接被调用，">
-<meta property="og:updated_time" content="2017-06-30T06:01:33.885Z">
+<meta property="og:description" content="构造函数
+默认函数首字母大写
+构造函数并没有显示返回任何东西。new 操作符会自动创建给定的类型并返回他们，当调用构造函数时，new会自动创建this对象，且类型就是构造函数类型。
+也可以在构造函数中显示调用return.如果返回的值是一个对象，它会代替新创建的对象实例返回。如果返回的值是一个原始类型，它会被忽略，新创建的实例会被返回。  
+因为构造函数也是函数，所以可以直接被调用，但是它的返回值">
+<meta property="og:updated_time" content="2017-06-30T06:07:56.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js面向对象">
-<meta name="twitter:description" content="构造函数- 默认函数首字母大写
-- 构造函数并没有显示返回任何东西。new 操作符会自动创建给定的类型并返回他们，当调用构造函数时，new会自动创建this对象，且类型就是构造函数类型。
-- 也可以在构造函数中显示调用return.如果返回的值是一个对象，它会代替新创建的对象实例返回。如果返回的值是一个原始类型，它会被忽略，新创建的实例会被返回。  
-- 因为构造函数也是函数，所以可以直接被调用，">
+<meta name="twitter:description" content="构造函数
+默认函数首字母大写
+构造函数并没有显示返回任何东西。new 操作符会自动创建给定的类型并返回他们，当调用构造函数时，new会自动创建this对象，且类型就是构造函数类型。
+也可以在构造函数中显示调用return.如果返回的值是一个对象，它会代替新创建的对象实例返回。如果返回的值是一个原始类型，它会被忽略，新创建的实例会被返回。  
+因为构造函数也是函数，所以可以直接被调用，但是它的返回值">
 
 
 
@@ -313,16 +316,17 @@
       
 
       
-        <h1 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h1><pre><code>- 默认函数首字母大写
-- 构造函数并没有显示返回任何东西。new 操作符会自动创建给定的类型并返回他们，当调用构造函数时，new会自动创建this对象，且类型就是构造函数类型。
-- 也可以在构造函数中显示调用return.如果返回的值是一个对象，它会代替新创建的对象实例返回。如果返回的值是一个原始类型，它会被忽略，新创建的实例会被返回。  
-- 因为构造函数也是函数，所以可以直接被调用，但是它的返回值为undefine，此时构造函数里面的this对象等于全局this对象。this.name其实就是创建一个全局的变量name。在严格模式下，当你补通过new 调用Person构造函数会出现错误。  
-</code></pre><p>  用new操作符调用一个函数的时候：</p>
-<ul>
+        <h1 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h1><ul>
+<li>默认函数首字母大写</li>
+<li>构造函数并没有显示返回任何东西。new 操作符会自动创建给定的类型并返回他们，当调用构造函数时，new会自动创建this对象，且类型就是构造函数类型。</li>
+<li>也可以在构造函数中显示调用return.如果返回的值是一个对象，它会代替新创建的对象实例返回。如果返回的值是一个原始类型，它会被忽略，新创建的实例会被返回。  </li>
+<li><p>因为构造函数也是函数，所以可以直接被调用，但是它的返回值为undefine，此时构造函数里面的this对象等于全局this对象。this.name其实就是创建一个全局的变量name。在严格模式下，当你补通过new 调用Person构造函数会出现错误。  </p>
+<h3 id="用new操作符调用一个函数的时候："><a href="#用new操作符调用一个函数的时候：" class="headerlink" title="用new操作符调用一个函数的时候："></a>用new操作符调用一个函数的时候：</h3><ul>
 <li>函数内部创建一个局部变量，是一个空对象{}；var obj  ={};obj.<strong>proto</strong> = CO.prototype;</li>
 <li>函数将自己的上下文设置为这个{}；CO.call(obj);</li>
 <li>函数执行所有语句；</li>
-<li><p>函数将return 这个对象{}，函数将把自己的上下文返回。return obj;</p>
+<li>函数将return 这个对象{}，函数将把自己的上下文返回。return obj;</li>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> People(name, age, sex) &#123;</div><div class="line"> this.name = name;</div><div class="line"> this.age = age;</div><div class="line"> this.sex = sex;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var p1 = new People(<span class="string">'小明'</span>, 30, <span class="string">'男'</span>);</div><div class="line">var p2 = new People(<span class="string">'小红'</span>, 28, <span class="string">'女'</span>);</div><div class="line"></div><div class="line">console.log(p1); //People&#123;name: <span class="string">"小明"</span>, age: 30, sex: <span class="string">"男"</span>&#125;</div><div class="line">console.log(p2); //People&#123;name: <span class="string">"小红"</span>, age: 28, sex: <span class="string">"女"</span>&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -395,7 +399,7 @@ ECMAScript2016中，提供了Object.create()函数，可以指定一个对象为
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">People</span></span>() &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var p1 = new People();</div><div class="line">console.log(People.prototype.constructor == People);// <span class="literal">true</span></div><div class="line">console.log(p1.constructor == People);//<span class="literal">true</span></div></pre></td></tr></table></figure>
 
-鸭式辨型
+## 鸭式辨型
 James Whitcomb Riley提出像鸭子一样走路、游泳和嘎嘎叫的鸟就是鸭子
 </code></pre>
       
@@ -587,7 +591,7 @@ James Whitcomb Riley提出像鸭子一样走路、游泳和嘎嘎叫的鸟就是
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#构造函数"><span class="nav-number">1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型链"><span class="nav-number">2.</span> <span class="nav-text">原型链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造函数和实例的关系"><span class="nav-number">3.</span> <span class="nav-text">构造函数和实例的关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内置构造函数"><span class="nav-number">4.</span> <span class="nav-text">内置构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象的种类的归属辨别"><span class="nav-number">5.</span> <span class="nav-text">对象的种类的归属辨别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#构造函数"><span class="nav-number">1.</span> <span class="nav-text">构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用new操作符调用一个函数的时候："><span class="nav-number">1.0.1.</span> <span class="nav-text">用new操作符调用一个函数的时候：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型链"><span class="nav-number">2.</span> <span class="nav-text">原型链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造函数和实例的关系"><span class="nav-number">3.</span> <span class="nav-text">构造函数和实例的关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内置构造函数"><span class="nav-number">4.</span> <span class="nav-text">内置构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象的种类的归属辨别"><span class="nav-number">5.</span> <span class="nav-text">对象的种类的归属辨别</span></a></li></ol></div>
             
           </div>
         </section>
